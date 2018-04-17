@@ -45,7 +45,7 @@ padding-right = 5
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Roboto:pixelsize=14;-4
+font-0 = Noto Sans Mono CJK SC Regular:pixelsize=12:heavy;-4
 font-1 = FontAwesome:pixelsize=14;-4
 font-2 = unifont:fontformat=truetype:size=14:heavy;-4
 font-3 = siji:pixelsize=14;-4
