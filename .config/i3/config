@@ -195,7 +195,7 @@ bindsym $mod+Shift+f gaps inner all set 0; gaps outer all set 0;
 bindsym $mod+Shift+g gaps inner all set 20; gaps outer all set 10;
 
 # Background
-exec --no-startup-id feh --bg-center ~/Pictures/backgrounds/space2.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/backgrounds/mountains.jpg
 # Geen window border
 new_window normal
 hide_edge_borders vertical
@@ -214,7 +214,7 @@ bindsym Print exec --no-startup-id scrot ~/Pictures/screenshot-%b%d::%H%M%S.png
 #exec gnome-panel
 
 exec --no-startup-id syncthing
-exec --no-startup-id polybar -r -c ~/.config/polybar/space2 space
+exec --no-startup-id polybar -r -c ~/.config/polybar/mountains space
 
 # Stop de muis ebola
 focus_follows_mouse no
@@ -223,6 +223,7 @@ exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ss
 #exec --no-startup-id sudo rm /usr/lib/i386-linux-gnu/mesa/libGL.so.1
 
 exec --no-startup-id nm-applet
+
 
 # exec "xrandr | grep 'HDMI-1-1 connected' && xrandr --output eDP-1-1 --auto --output HDMI-1-1 --auto --left-of eDP-1-1"
 exec --no-startup-id albert
