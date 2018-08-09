@@ -116,9 +116,9 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload; exec "pkill -USR1 polybar"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r restart; exec "pkill -USR1 polybar"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -170,9 +170,11 @@ exec --no-startup-id synclient VertScrollDelta=-113 HorizTwoFingerScroll=1 Horiz
 
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym $mod+plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym $mod+minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 2 toggle # mute sound
 
 # Screen brightness controls
@@ -180,10 +182,17 @@ bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # class                 border  backgr. text    indicator
-client.focused          #dddddd #dddddd #111111 #ffde00
-client.focused_inactive #dddddd #aaaaaa #111111 #ffde00
-client.unfocused        #dddddd #777777 #111111 #ffde00
+#client.focused          #dddddd #dddddd #111111 #ffde00
+#client.focused_inactive #dddddd #aaaaaa #111111 #ffde00
+#client.unfocused        #dddddd #777777 #111111 #ffde00
+#client.urgent           #2f343a #900000 #ffffff #900000
+
+# class                 border  backgr. text    indicator
+client.focused          #ff7541 #272625 #cfcfcf #ff754a
+client.focused_inactive #272625 #272625 #77     #ff754a
+client.unfocused        #272625 #272625 #cfcfcf #ff754a
 client.urgent           #2f343a #900000 #ffffff #900000
+
 
 #GAPS 
 #Normal: 8, 8
